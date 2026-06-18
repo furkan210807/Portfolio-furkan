@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Furkan Alam — Full Stack Developer</title>
+<meta name="description" content="Md Furkan Alam is a Full Stack Developer based in Greater Noida, India — building AI chatbots, trading platforms, and smart web systems.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-grid"></div>
+<div class="bg-mesh">
+  <div class="bg-orb o1"></div>
+  <div class="bg-orb o2"></div>
+  <div class="bg-orb o3"></div>
+  <div class="bg-orb o4"></div>
+  <div class="bg-orb o5"></div>
+</div>
+
+<!-- Aurora Background Canvas -->
+<canvas id="aurora-canvas"></canvas>
+
+<!-- 3D Particle Canvas -->
+<canvas id="bg-canvas"></canvas>
+
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-avatar">
+      <img src="./furkan.jpg" alt="Furkan" class="nav-avatar-img">
+    </div>
+    Furkan<span style="color:var(--gold); font-style:normal;">.</span>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about"      class="nav-link">About</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#projects"   class="nav-link">Projects</a></li>
+    <li><a href="#skills"     class="nav-link">Skills</a></li>
+    <li><a href="#learning"   class="nav-link">Learning</a></li>
+    <li><a href="#education"  class="nav-link">Education</a></li>
+    <li><a href="#contact"    class="nav-link">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="Furkan Resume.pdf" download class="btn-resume">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Resume
+    </a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<!-- FLOATING SOCIAL BAR -->
+<div class="floating-social">
+  <a href="https://github.com/furkan210807" target="_blank" title="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+  <a href="https://www.linkedin.com/in/md-furkan-alam-587769341/" target="_blank" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+  <a href="https://wa.me/917835840956" target="_blank" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div id="particles-js"></div>
+  <!-- 3D blobs -->
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <div class="hero-blob b4"></div>
+
+  <!-- Perspective grid floor -->
+  <div class="hero-floor"></div>
+
+  <!-- Hero Profile Circle -->
+  <div class="hero-profile-wrap">
+    <div class="hero-profile-ring"></div>
+    <div class="hero-profile-ring ring2"></div>
+    <div class="hero-profile-ring ring3"></div>
+    <img src="./furkan.jpg" alt="Md Furkan Alam" class="hero-profile-img">
+    <div class="hero-profile-badge">Full Stack Dev</div>
+  </div>
+
+  <div class="hero-status">
+    <span class="status-dot"></span>
+    Open to opportunities
+  </div>
+
+  <h1 class="hero-h1">
+    <span class="h1-line1">Md Furkan Alam</span>
+    <span class="h1-line2">builds the</span>
+    <span class="h1-ghost">future.</span>
+  </h1>
+
+  <p class="hero-tag"><span>&lt;</span> Full Stack Developer · Greater Noida <span>/&gt;</span></p>
+
+  <p class="hero-desc">
+    Fresher with a builder's mindset — crafting AI chatbots, trading platforms,
+    and smart web systems. I turn concepts into working software, one project at a time.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#projects" class="btn-p" id="view-projects-btn">View My Projects</a>
+    <a href="#contact"  class="btn-s" id="lets-connect-btn">Let's Connect</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="s-num" data-count="3">0</div>
+      <div class="s-label">Projects Built</div>
+    </div>
+    <div class="stat-item">
+      <div class="s-num">100%</div>
+      <div class="s-label">Self-Motivated</div>
+    </div>
+    <div class="stat-item">
+      <div class="s-num">AI</div>
+      <div class="s-label">Powered Apps</div>
+    </div>
+    <div class="stat-item">
+      <div class="s-num">∞</div>
+      <div class="s-label">Curiosity</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" id="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-card reveal" id="about-card-3d">
+      <div class="about-card-inner" id="about-card-inner">
+        <div class="about-card-top">
+          <div class="about-profile-wrap">
+            <div class="about-profile-ring"></div>
+            <div class="about-profile-ring ring2"></div>
+            <img src="./furkan.jpg" alt="Md Furkan Alam" class="about-profile-img">
+          </div>
+          <div class="about-name-block">
+            <div class="about-name">Md Furkan Alam</div>
+            <div class="about-role">Full Stack Developer</div>
+          </div>
+        </div>
+        <div class="about-card-body">
+          <div class="about-info-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Greater Noida, India
+          </div>
+          <div class="about-info-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            furkan210807@gmail.com
+          </div>
+          <div class="about-info-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Fresher · Available Now
+          </div>
+          <div class="about-chips">
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Python</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">AI/ML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text reveal">
+      <div class="s-tag">Who I Am</div>
+      <h2 class="s-title">A builder driven by<br><em>curiosity &amp; code</em></h2>
+      <div class="section-line"></div>
+      <div class="fresher-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Fresher — actively building real-world projects
+      </div>
+      <p>Hi, I'm <strong>Md Furkan Alam</strong> — a passionate Full Stack Developer based in <strong>Greater Noida</strong>. Even as a fresher, I've been relentlessly building projects that solve real problems using modern technologies.</p>
+      <p>I believe the best way to learn is to build. That's why I've dived deep into <strong>AI integrations</strong>, <strong>financial technology</strong>, and <strong>educational platforms</strong> — going beyond tutorials to ship complete, functional applications.</p>
+      <p>I'm eager to join a team where I can contribute, grow fast, and make a real impact from day one. My code is clean, my ambition is high, and my passion for technology is unstoppable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="s-tag reveal">Work</div>
+  <h2 class="s-title reveal">Experience</h2>
+  <div class="section-line reveal"></div>
+  <p class="s-sub reveal">Real-world industry experience — where I applied my skills and grew as a developer.</p>
+
+  <div class="exp-timeline">
+
+    <div class="exp-card reveal">
+      <div class="exp-dot">
+        <div class="exp-dot-inner"></div>
+        <div class="exp-dot-ring"></div>
+      </div>
+      <div class="exp-body tilt-card">
+        <div class="exp-sheen"></div>
+        <div class="exp-header">
+          <div class="exp-logo">
+            <div class="exp-logo-anim">
+              <div class="logo-ring lr1"></div>
+              <div class="logo-ring lr2"></div>
+              <span class="logo-letter">B</span>
+            </div>
+          </div>
+          <div class="exp-meta">
+            <div class="exp-company">Blueve Tech</div>
+            <div class="exp-role">MERN Stack Developer Intern</div>
+            <div class="exp-period">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Jun 2024 &ndash; Aug 2024 &nbsp;&middot;&nbsp; 2 Months
+            </div>
+            <div class="exp-type">Internship &nbsp;&middot;&nbsp; Remote</div>
+          </div>
+          <div class="exp-badge">Completed</div>
+        </div>
+        <p class="exp-desc">
+          Built and maintained full-stack web applications using the <strong>MERN stack</strong> &mdash; MongoDB, Express.js, React.js, and Node.js.
+          Worked on real client projects, developed REST APIs, implemented JWT authentication, and contributed to responsive front-end interfaces.
+        </p>
+        <div class="exp-highlights">
+          <div class="exp-hl">
+            <div class="hl-icon">&#x269B;&#xFE0F;</div>
+            <div><div class="hl-title">React.js UI Development</div><div class="hl-desc">Built interactive dashboards and component libraries</div></div>
+          </div>
+          <div class="exp-hl">
+            <div class="hl-icon">&#x1F50C;</div>
+            <div><div class="hl-title">REST API Integration</div><div class="hl-desc">Designed and consumed Express.js + Node.js APIs</div></div>
+          </div>
+          <div class="exp-hl">
+            <div class="hl-icon">&#x1F5C4;&#xFE0F;</div>
+            <div><div class="hl-title">MongoDB Database</div><div class="hl-desc">Schema design, queries and Mongoose integration</div></div>
+          </div>
+          <div class="exp-hl">
+            <div class="hl-icon">&#x1F510;</div>
+            <div><div class="hl-title">JWT Authentication</div><div class="hl-desc">Secure login flows and protected routes</div></div>
+          </div>
+        </div>
+        <div class="exp-stack">
+          <span class="exp-tag">MongoDB</span><span class="exp-tag">Express.js</span><span class="exp-tag">React.js</span><span class="exp-tag">Node.js</span>
+          <span class="exp-tag">REST APIs</span><span class="exp-tag">JWT</span><span class="exp-tag">Mongoose</span><span class="exp-tag">Git</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="s-tag reveal">Portfolio</div>
+  <h2 class="s-title reveal">Projects I've built</h2>
+
+  <div class="section-line reveal"></div>
+  <p class="s-sub reveal">Real applications built from scratch — each one solving a genuine problem with modern tech.</p>
+
+  <div class="projects-wrap">
+    <!-- Featured -->
+    <div class="proj-card big reveal reveal-left tilt-card" id="proj-chatbot">
+      <div class="proj-thumb" style="--ta:rgba(212,168,83,0.18);--tb:rgba(155,114,239,0.14);">
+        <div class="thumb-bg"></div>
+        <span class="proj-corner wip">In Progress</span>
+        <img src="./images/ai_chat.png" alt="AI Chatbot Icon" class="thumb-img">
+      </div>
+      <div class="proj-body" data-num="01">
+        <div class="s-tag" style="margin-bottom:0.7rem;">Featured Project</div>
+        <h3>AI Conversational Assistant (LLM-based Chat System)</h3>
+        <p>Engineered a low-latency, context-aware chat system leveraging OpenAI API &amp; advanced prompt engineering for high-accuracy, real-time responses.<br><br>Architected scalable REST APIs (Node.js/Express) to manage concurrent queries, conversational memory, and future RAG integrations.</p>
+        <div class="proj-stack">
+          <span class="spl">React.js</span><span class="spl">Node.js</span>
+          <span class="spl">OpenAI API</span><span class="spl">Express.js</span>
+          <span class="spl">MongoDB</span><span class="spl">Tailwind CSS</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/furkan210807" target="_blank" class="pl">GitHub Repository →</a>
+          <a href="#" class="pl">Live Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trading App -->
+    <div class="proj-card big reveal reveal-right tilt-card" id="proj-trading">
+      <div class="proj-thumb screenshot-mode">
+        <img src="./images/wanderlust.png" alt="Wanderlust Platform Screenshot" class="proj-screenshot">
+        <span class="proj-corner wip">Building</span>
+      </div>
+      <div class="proj-body" data-num="02">
+        <h3>Wanderlust – Travel Platform | MERN Stack</h3>
+        <p>Developed a comprehensive full-stack property marketplace.<br><br>Implemented robust, role-based user authentication and security pipelines utilizing JWT and bcrypt for secure login and data protection.<br><br>Optimized media handling by integrating Cloudinary for fast, dynamic image uploads and optimized database schemas in MongoDB for complex listing queries.</p>
+        <div class="proj-stack">
+          <span class="spl">React.js</span><span class="spl">Node.js</span>
+          <span class="spl">Express.js</span><span class="spl">MongoDB</span>
+          <span class="spl">JWT &amp; bcrypt</span><span class="spl">Cloudinary</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/furkan210807/Wanderlust-Booking-Platform" target="_blank" class="pl">GitHub Repository →</a>
+          <a href="https://wanderlust-booking-platform-tu3g.onrender.com/listings" target="_blank" class="pl">Live Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attendance System -->
+    <div class="proj-card big reveal reveal-left tilt-card" id="proj-attendance">
+      <div class="proj-thumb" style="--ta:rgba(244,114,182,0.16);--tb:rgba(155,114,239,0.12);">
+        <div class="thumb-bg"></div>
+        <span class="proj-corner live">Complete</span>
+        <img src="./images/attendance.png" alt="Attendance System Icon" class="thumb-img">
+      </div>
+      <div class="proj-body" data-num="03">
+        <h3>Student Online Attendance System</h3>
+        <p>A full-stack web application for educational institutions to manage and track student attendance digitally. Includes role-based access for teachers and students, automated reports, and an analytics dashboard.</p>
+        <div class="proj-stack">
+          <span class="spl">React.js</span><span class="spl">Node.js</span>
+          <span class="spl">Express</span><span class="spl">MySQL</span>
+          <span class="spl">JWT Auth</span><span class="spl">Chart.js</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/furkan210807" target="_blank" class="pl">GitHub →</a>
+          <a href="#" class="pl">Case Study →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-tag reveal">Tech Stack</div>
+  <h2 class="s-title reveal">Skills &amp; technologies</h2>
+  <div class="section-line reveal"></div>
+  <p class="s-sub reveal">My toolkit for building full-stack applications — from pixel-perfect UIs to scalable backends and AI integrations.</p>
+  <div class="skills-wrap">
+
+    <!-- Frontend — React Atom -->
+    <div class="sk-card reveal tilt-card" style="--ca:#61dafb;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#61dafb; --ics:rgba(97,218,251,0.10);">
+          <div class="sk-anim react-atom">
+            <div class="atom-nucleus"></div>
+            <div class="atom-orbit orb1"><div class="atom-electron"></div></div>
+            <div class="atom-orbit orb2"><div class="atom-electron"></div></div>
+            <div class="atom-orbit orb3"><div class="atom-electron"></div></div>
+          </div>
+        </div>
+      </div>
+      <h3>Frontend</h3>
+      <div class="sk-tags">
+        <span class="sk-t">React.js</span><span class="sk-t">HTML5</span>
+        <span class="sk-t">CSS3</span><span class="sk-t">JavaScript</span>
+        <span class="sk-t">Tailwind CSS</span><span class="sk-t">Bootstrap</span>
+      </div>
+    </div>
+
+    <!-- Backend — Server Terminal -->
+    <div class="sk-card reveal tilt-card" style="--ca:#68d391;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#68d391; --ics:rgba(104,211,145,0.10);">
+          <div class="sk-anim terminal-anim">
+            <div class="term-line tl1"></div>
+            <div class="term-line tl2"></div>
+            <div class="term-line tl3"></div>
+            <div class="term-cursor"></div>
+          </div>
+        </div>
+      </div>
+      <h3>Backend</h3>
+      <div class="sk-tags">
+        <span class="sk-t">Node.js</span><span class="sk-t">Express.js</span>
+        <span class="sk-t">Python</span><span class="sk-t">REST APIs</span>
+        <span class="sk-t">WebSockets</span><span class="sk-t">JWT Auth</span>
+      </div>
+    </div>
+
+    <!-- Database — Stacked Cylinders -->
+    <div class="sk-card reveal tilt-card" style="--ca:#9b72ef;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#9b72ef; --ics:rgba(155,114,239,0.10);">
+          <div class="sk-anim db-anim">
+            <div class="db-cyl dc1"></div>
+            <div class="db-cyl dc2"></div>
+            <div class="db-cyl dc3"></div>
+            <div class="db-dot dd1"></div>
+            <div class="db-dot dd2"></div>
+          </div>
+        </div>
+      </div>
+      <h3>Database</h3>
+      <div class="sk-tags">
+        <span class="sk-t">MongoDB</span><span class="sk-t">MySQL</span>
+        <span class="sk-t">PostgreSQL</span><span class="sk-t">Firebase</span>
+        <span class="sk-t">Mongoose</span>
+      </div>
+    </div>
+
+    <!-- AI / ML — Neural Network -->
+    <div class="sk-card reveal tilt-card" style="--ca:#f472b6;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#f472b6; --ics:rgba(244,114,182,0.10);">
+          <div class="sk-anim neural-anim">
+            <div class="nn-node n1"></div>
+            <div class="nn-node n2"></div>
+            <div class="nn-node n3"></div>
+            <div class="nn-node n4"></div>
+            <div class="nn-node n5"></div>
+            <div class="nn-pulse p1"></div>
+            <div class="nn-pulse p2"></div>
+            <div class="nn-pulse p3"></div>
+          </div>
+        </div>
+      </div>
+      <h3>AI / ML</h3>
+      <div class="sk-tags">
+        <span class="sk-t">OpenAI API</span><span class="sk-t">LangChain</span>
+        <span class="sk-t">Python ML</span><span class="sk-t">Prompt Eng.</span>
+        <span class="sk-t">NLP Basics</span>
+      </div>
+    </div>
+
+    <!-- Tools & DevOps — Spinning Gear -->
+    <div class="sk-card reveal tilt-card" style="--ca:#fb923c;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#fb923c; --ics:rgba(251,146,60,0.10);">
+          <div class="sk-anim gear-anim">
+            <div class="gear gear-big"></div>
+            <div class="gear gear-small"></div>
+          </div>
+        </div>
+      </div>
+      <h3>Tools &amp; DevOps</h3>
+      <div class="sk-tags">
+        <span class="sk-t">Git &amp; GitHub</span><span class="sk-t">VS Code</span>
+        <span class="sk-t">Postman</span><span class="sk-t">Vercel</span>
+        <span class="sk-t">Netlify</span><span class="sk-t">npm/yarn</span>
+      </div>
+    </div>
+
+    <!-- Core Concepts — Orbiting Rings -->
+    <div class="sk-card reveal tilt-card" style="--ca:#34d399;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#34d399; --ics:rgba(52,211,153,0.10);">
+          <div class="sk-anim concept-anim">
+            <div class="cc-ring cr1"></div>
+            <div class="cc-ring cr2"></div>
+            <div class="cc-dot cd1"></div>
+            <div class="cc-dot cd2"></div>
+            <div class="cc-core"></div>
+          </div>
+        </div>
+      </div>
+      <h3>Core Concepts</h3>
+      <div class="sk-tags">
+        <span class="sk-t">DSA</span><span class="sk-t">OOP</span>
+        <span class="sk-t">MVC Pattern</span><span class="sk-t">REST Design</span>
+        <span class="sk-t">Responsive Design</span>
+      </div>
+    </div>
+
+    <!-- Teamwork & Extra Skills -->
+    <div class="sk-card reveal tilt-card" style="--ca:#eab308;">
+      <div class="sk-icon-wrap">
+        <div class="sk-icon-ring"></div>
+        <div class="sk-icon-box" style="--ic:#eab308; --ics:rgba(234,179,8,0.10); padding: 0; overflow: hidden; border-radius: 18px;">
+          <img src="./images/skills_teamwork.png" alt="Teamwork" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+      <h3>Teamwork &amp; Extra Skills</h3>
+      <div class="sk-tags">
+        <span class="sk-t">Collaboration</span><span class="sk-t">Communication</span>
+        <span class="sk-t">Agile/Scrum</span><span class="sk-t">Problem Solving</span>
+        <span class="sk-t">Leadership</span><span class="sk-t">Adaptability</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- LEARNING -->
+<section id="learning">
+  <div class="s-tag reveal">Growth</div>
+  <h2 class="s-title reveal">My Learning Path</h2>
+  <div class="section-line reveal"></div>
+  <p class="s-sub reveal">What I've mastered, what I'm currently studying, and what's next on the horizon.</p>
+
+  <div class="learn-grid">
+    <div class="learn-card reveal tilt-card">
+      <div class="learn-icon"><img src="./images/learn_mern.png" alt="MERN Stack" class="learn-icon-img"></div>
+      <h3>MERN Stack</h3>
+      <p>Successfully completed full stack web development using MongoDB, Express.js, React, and Node.js.</p>
+      <div class="learn-bar-wrap"><div class="learn-bar" data-width="100" style="background:var(--gold);"></div></div>
+      <div class="learn-pct" style="color:var(--gold);">Completed</div>
+    </div>
+    <div class="learn-card reveal tilt-card">
+      <div class="learn-icon"><img src="./images/learn_system.png" alt="Data Structures & Algorithms" class="learn-icon-img"></div>
+      <h3>Data Structures &amp; Algorithms</h3>
+      <p>Deepening my problem-solving skills and understanding of core computer science fundamentals.</p>
+      <div class="learn-bar-wrap"><div class="learn-bar" data-width="65"></div></div>
+      <div class="learn-pct">65%</div>
+    </div>
+    <div class="learn-card reveal tilt-card">
+      <div class="learn-icon"><img src="./images/learn_python.png" alt="AI / Machine Learning" class="learn-icon-img"></div>
+      <h3>AI / Machine Learning</h3>
+      <p>Studying machine learning concepts, neural networks, and Python libraries to build smart applications.</p>
+      <div class="learn-bar-wrap"><div class="learn-bar" data-width="45"></div></div>
+      <div class="learn-pct">45%</div>
+    </div>
+    <div class="learn-card reveal tilt-card">
+      <div class="learn-icon"><img src="./images/learn_app.png" alt="App Development" class="learn-icon-img"></div>
+      <h3>Mobile App Development</h3>
+      <p>Future learning goal: Expanding my skillset to build cross-platform mobile apps.</p>
+      <div class="learn-bar-wrap"><div class="learn-bar" data-width="10"></div></div>
+      <div class="learn-pct">Next Goal</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="s-tag reveal">Background</div>
+  <h2 class="s-title reveal">Education</h2>
+  <div class="section-line reveal"></div>
+  <p class="s-sub reveal">The academic foundation behind my technical journey.</p>
+  <div class="edu-wrap">
+    <div class="edu-card reveal tilt-card" style="--ec:rgba(212,168,83,0.06);">
+      <div class="edu-yr">Currently Pursuing</div>
+      <div class="edu-deg">B.Tech — Computer Science Engineering</div>
+      <div class="edu-school">IEC College of Engineering and Technology, Greater Noida</div>
+      <div class="edu-desc">Studying core CS fundamentals including Data Structures, Algorithms, Operating Systems, Database Management, and Software Engineering. Actively applying coursework through personal projects.</div>
+    </div>
+    <div class="edu-card reveal tilt-card" style="--ec:rgba(45,212,191,0.05);">
+      <div class="edu-yr">Completed</div>
+      <div class="edu-deg">Class 12 — Intermediate</div>
+      <div class="edu-school">Shahid Bhagat Singh Inter College, Greater Noida</div>
+      <div class="edu-desc">Completed higher secondary education — building a strong analytical and problem-solving foundation that informs my approach to engineering.</div>
+    </div>
+    <div class="edu-card reveal tilt-card" style="--ec:rgba(155,114,239,0.05);">
+      <div class="edu-yr">Completed</div>
+      <div class="edu-deg">Class 10 — High School</div>
+      <div class="edu-school">NM Public School, Greater Noida</div>
+      <div class="edu-desc">Built a solid academic foundation with a keen interest in science and technology.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner reveal">
+    <div class="contact-avatar-wrap">
+      <img src="./furkan.jpg" alt="Md Furkan Alam" class="contact-avatar-img">
+      <div class="contact-avatar-ring"></div>
+      <div class="contact-avatar-ring ring2"></div>
+    </div>
+    <div class="s-tag" style="justify-content:center;">Get In Touch</div>
+    <h2 class="contact-title">
+      Let's build something<br>
+      <span class="grad">great together.</span>
+    </h2>
+    <div class="section-line" style="margin:1.2rem auto 2rem;"></div>
+    <p class="contact-sub">
+      I'm a fresher actively looking for my first role — internship, junior developer, or freelance project. If you're looking for someone hungry to learn and ship, I'd love to connect.
+    </p>
+
+    <a href="mailto:furkan210807@gmail.com" class="contact-email-btn" id="contact-email-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      furkan210807@gmail.com
+    </a>
+    <div class="socials">
+      <a href="https://github.com/furkan210807" target="_blank" class="soc-btn" id="github-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/md-furkan-alam-587769341/" target="_blank" class="soc-btn" id="linkedin-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://wa.me/917835840956" target="_blank" class="soc-btn soc-whatsapp" id="whatsapp-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="contact-location">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Greater Noida, Uttar Pradesh, India
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="footer-year">2025</span> Md Furkan Alam — Built with passion from Greater Noida.</span>
+  <span class="code">furkan210807@gmail.com</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
