@@ -186,19 +186,20 @@
     dot.style.top  = my + 'px';
   });
 
-  (function animRing() {
-    rx += (mx - rx) * 0.13;
-    ry += (my - ry) * 0.13;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(animRing);
+  // (function animRing() {
+  //   rx += (mx - rx) * 0.13;
+  //   ry += (my - ry) * 0.13;
+  //   ring.style.left = rx + 'px';
+  //   ring.style.top  = ry + 'px';
+  //   requestAnimationFrame(animRing);
+  // })();
   })();
 
-  document.querySelectorAll('a,button,.proj-card,.sk-card,.learn-card,.edu-card').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-})();
+//   document.querySelectorAll('a,button,.proj-card,.sk-card,.learn-card,.edu-card').forEach(el => {
+//     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+//     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+//   });
+// })();
 
 
 /* ─────────────────────────────────────────────
