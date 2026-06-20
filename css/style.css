@@ -66,6 +66,11 @@ body {
   overflow-x: hidden;
   cursor: none;
   line-height: 1.7;
+  margin-left: 160px;
+  margin-right: 160px;
+  background-color: transparent;
+  color: transparent;
+  
 }
 
 /* ─── RICH BACKGROUND RADIALS ─── */
@@ -888,6 +893,87 @@ section + section::before {
 /* ═══════════════════════════════════════════════════
    PROJECTS
 ═══════════════════════════════════════════════════ */
+/* PROJECT TIMELINE STYLE */
+
+.projects-wrap {
+    position: relative;
+    width: 100%;
+}
+
+/* Center Vertical Line */
+.projects-wrap::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #9b72ef;
+    transform: translateX(-50%);
+}
+
+/* Project Cards */
+.proj-card {
+    position: relative;
+    width: 45%;
+    margin: 50px 0;
+}
+
+/* Left Side Cards */
+.proj-card:nth-child(odd) {
+    margin-right: auto;
+}
+
+/* Right Side Cards */
+.proj-card:nth-child(even) {
+    margin-left: auto;
+}
+
+/* Horizontal Connecting Line */
+.proj-card::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background: #9b72ef;
+}
+
+/* Left Card Line */
+.proj-card:nth-child(odd)::after {
+    right: -50px;
+}
+
+/* Right Card Line */
+.proj-card:nth-child(even)::after {
+    left: -50px;
+}
+
+/* Glowing Dot */
+.proj-card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #9b72ef;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #9b72ef;
+}
+
+/* Left Dot */
+.proj-card:nth-child(odd)::before {
+    right: -60px;
+}
+
+/* Right Dot */
+.proj-card:nth-child(even)::before {
+    left: -60px;
+}
+
+
+
+
 #projects { background: var(--bg); }
 
 .projects-wrap {
@@ -2531,4 +2617,489 @@ footer span.code {
   .hero-stats { gap: 1.5rem; }
   .s-num { font-size: 2rem; }
   h1.hero-h1 { font-size: 2.6rem; }
+}
+
+/* =========================
+   THEME VARIABLES (LIGHT)
+========================= */
+:root {
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --border: rgba(0,0,0,0.12);
+}
+
+/* =========================
+   DARK MODE OVERRIDE
+========================= */
+.dark-mode {
+  --bg: #0a0a0a;
+  --surface: #18181b;
+  --text: #ffffff;
+  --muted: #cfcfcf;
+  --border: rgba(255,255,255,0.15);
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   BOX / CARD FIX (IMPORTANT)
+========================= */
+.box {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* FORCE TEXT INSIDE BOX */
+.box * {
+  color: inherit;
+}
+
+/* =========================
+   HEADINGS & TEXT SAFETY
+========================= */
+h1, h2, h3 {
+  color: var(--text);
+}
+
+p, span, li {
+  color: var(--muted);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7c3aed;
+};
+
+.dark-mode #about,
+.dark-mode #experience,
+.dark-mode #projects,
+.dark-mode #skills,
+.dark-mode #learning,
+.dark-mode #education,
+.dark-mode #contact {
+  background: transparent !important;
+}
+/* =========================
+   DARK MODE CONTACT SECTION FIX
+========================= */
+
+body.dark-mode #contact {
+  background: transparent !important;
+}
+
+/* =========================
+   PROJECTS SECTION DARK FIX
+========================= */
+
+body.dark-mode #projects {
+  background: transparent !important;
+}
+
+/* Titles & text */
+body.dark-mode #projects .s-title,
+body.dark-mode #projects .s-sub {
+  color: #ffffff !important;
+}
+
+body.dark-mode #projects .s-tag {
+  color: #c084fc !important;
+}
+
+/* Project Cards */
+body.dark-mode .proj-card {
+  background: #18181b !important;
+  border: 1px solid #8b5cf6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Project description text */
+body.dark-mode .proj-card p {
+  color: #e5e5e5 !important;
+}
+
+/* Stack tags */
+body.dark-mode .spl {
+  background: rgba(139, 92, 246, 0.15) !important;
+  color: #c084fc !important;
+  border: 1px solid rgba(139, 92, 246, 0.35) !important;
+}
+
+/* Links */
+body.dark-mode .proj-links a {
+  color: #a855f7 !important;
+}
+
+body.dark-mode .proj-links a:hover {
+  color: #c084fc !important;
+}
+
+/* Thumb overlay fix (optional clean look) */
+body.dark-mode .proj-thumb {
+  filter: brightness(0.85);
+}
+
+
+/* =========================
+   EXPERIENCE DARK MODE FIX
+========================= */
+
+body.dark-mode #experience {
+  background: transparent !important;
+}
+
+/* Section text */
+body.dark-mode #experience .s-title,
+body.dark-mode #experience .s-sub {
+  color: #ffffff !important;
+}
+
+body.dark-mode #experience .s-tag {
+  color: #c084fc !important;
+}
+
+/* Timeline card */
+body.dark-mode .exp-body {
+  background: #18181b !important;
+  border: 1px solid #8b5cf6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+/* Experience text */
+body.dark-mode .exp-desc {
+  color: #e5e5e5 !important;
+}
+
+/* Highlights cards */
+body.dark-mode .exp-hl {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(139, 92, 246, 0.25) !important;
+}
+
+body.dark-mode .hl-title {
+  color: #ffffff !important;
+}
+
+body.dark-mode .hl-desc {
+  color: #d1d5db !important;
+}
+
+/* Stack tags */
+body.dark-mode .exp-tag {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border: 1px solid rgba(139, 92, 246, 0.35) !important;
+  color: #c084fc !important;
+}
+
+/* Company + role text */
+body.dark-mode .exp-company,
+body.dark-mode .exp-role {
+  color: #ffffff !important;
+}
+
+/* Badge */
+body.dark-mode .exp-badge {
+  background: rgba(34, 197, 94, 0.15) !important;
+  border-color: rgba(34, 197, 94, 0.4) !important;
+  color: #4ade80 !important;
+}
+
+/* Timeline line */
+body.dark-mode .exp-timeline::before {
+  background: linear-gradient(180deg, #8b5cf6, rgba(139, 92, 246, 0.1)) !important;
+}
+
+
+/* =========================
+   ABOUT SECTION DARK MODE FIX
+========================= */
+
+body.dark-mode #about {
+  background: transparent !important;
+}
+
+/* Text side */
+body.dark-mode #about .s-title,
+body.dark-mode #about .s-tag {
+  color: #c084fc !important;
+}
+
+body.dark-mode #about .about-text p {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode #about strong {
+  color: #ffffff !important;
+}
+
+/* About card */
+body.dark-mode .about-card {
+  background: #18181b !important;
+  border: 1px solid #8b5cf6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+/* Name + role */
+body.dark-mode .about-name {
+  color: #ffffff !important;
+}
+
+body.dark-mode .about-role {
+  color: #c084fc !important;
+}
+
+/* Info rows */
+body.dark-mode .about-info-row {
+  color: #e5e5e5 !important;
+}
+
+/* Chips */
+body.dark-mode .chip {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border: 1px solid rgba(139, 92, 246, 0.35) !important;
+  color: #c084fc !important;
+}
+
+/* Fresher badge */
+body.dark-mode .fresher-badge {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+  color: #4ade80 !important;
+}
+
+/* Profile glow rings */
+body.dark-mode .about-profile-ring {
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+/* =========================
+   DARK MODE FIX (GLOBAL)
+========================= */
+
+body.dark {
+  background: #0b0b10 !important;
+  color: #ffffff !important;
+}
+
+/* all section backgrounds transparent in dark mode */
+body.dark section#about,
+body.dark section#experience,
+body.dark section#projects,
+body.dark section#skills,
+body.dark section#learning,
+body.dark section#education,
+body.dark section#contact {
+  background-color: transparent !important;
+}
+
+/* headings + text visibility fix */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark span,
+body.dark li,
+body.dark div {
+  color: #eaeaea !important;
+}
+
+/* cards readability */
+body.dark .about-card,
+body.dark .proj-card,
+body.dark .exp-card,
+body.dark .tilt-card {
+  background: rgba(20, 20, 25, 0.55) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* chips / tags */
+body.dark .chip,
+body.dark .spl,
+body.dark .exp-tag {
+  background: rgba(255,255,255,0.08) !important;
+  color: #fff !important;
+}
+
+/* links */
+body.dark a {
+  color: #8ab4ff !important;
+}
+
+
+/* =========================
+   DARK MODE NAVBAR FIX
+========================= */
+
+body.dark #main-nav {
+  background: rgba(15, 15, 25, 0.65) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* logo text */
+body.dark .nav-logo {
+  color: #ffffff !important;
+}
+
+/* nav links */
+body.dark .nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+  transition: 0.3s ease;
+}
+
+body.dark .nav-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(138, 180, 255, 0.4);
+}
+
+/* active / scroll state (optional if you use active class) */
+body.dark .nav-link.active {
+  color: #8ab4ff !important;
+}
+
+/* resume button */
+body.dark .btn-resume {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff !important;
+}
+
+body.dark .btn-resume:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Hire me button */
+body.dark .nav-cta {
+  background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.25);
+}
+
+/* hamburger lines */
+body.dark .hamburger span {
+  background: #fff !important;
+}
+
+/* theme toggle button */
+body.dark #themeBtn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+}
+
+/* PROJECT TIMELINE */
+
+.projects-wrap {
+    position: relative;
+    width: 100%;
+}
+
+/* Center Line */
+.projects-wrap::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #9b72ef;
+    transform: translateX(-50%);
+}
+
+/* Cards */
+.proj-card {
+    position: relative;
+    width: 45%;
+    margin: 60px 0;
+}
+
+/* Left Cards */
+.proj-card:nth-child(odd) {
+    margin-right: auto;
+}
+
+/* Right Cards */
+.proj-card:nth-child(even) {
+    margin-left: auto;
+}
+
+/* Connecting Line */
+.proj-card::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 3px;
+    background: #9b72ef;
+}
+
+/* Left */
+.proj-card:nth-child(odd)::after {
+    right: -50px;
+}
+
+/* Right */
+.proj-card:nth-child(even)::after {
+    left: -50px;
+}
+
+/* Center Image */
+.timeline-img {
+    position: absolute;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #9b72ef;
+    box-shadow: 0 0 20px #9b72ef;
+    transform: translateY(-50%);
+    background: #111;
+    z-index: 10;
+}
+
+.timeline-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Left Image */
+.proj-card:nth-child(odd) .timeline-img {
+    right: -95px;
+}
+
+/* Right Image */
+.proj-card:nth-child(even) .timeline-img {
+    left: -95px;
 }

@@ -56,7 +56,8 @@
       Resume
     </a>
     <a href="#contact" class="nav-cta">Hire Me</a>
-  </div>
+    <button id="themeBtn">🌙</button>
+</div>
 </nav>
 
 <!-- FLOATING SOCIAL BAR -->
@@ -136,7 +137,7 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" style="background-color: transparent;">
   <div class="about-wrap">
     <div class="about-card reveal" id="about-card-3d">
       <div class="about-card-inner" id="about-card-inner">
@@ -191,7 +192,7 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" style="background-color: transparent;">
   <div class="s-tag reveal">Work</div>
   <h2 class="s-title reveal">Experience</h2>
   <div class="section-line reveal"></div>
@@ -258,7 +259,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" style="background-color: transparent;">
   <div class="s-tag reveal">Portfolio</div>
   <h2 class="s-title reveal">Projects I've built</h2>
 
@@ -268,6 +269,9 @@
   <div class="projects-wrap">
     <!-- Featured -->
     <div class="proj-card big reveal reveal-left tilt-card" id="proj-chatbot">
+      <div class="timeline-img">
+   <img src="./images/ai_chat.png" alt="">
+</div>
       <div class="proj-thumb" style="--ta:rgba(212,168,83,0.18);--tb:rgba(155,114,239,0.14);">
         <div class="thumb-bg"></div>
         <span class="proj-corner wip">In Progress</span>
@@ -276,7 +280,7 @@
       <div class="proj-body" data-num="01">
         <div class="s-tag" style="margin-bottom:0.7rem;">Featured Project</div>
         <h3>AI Conversational Assistant (LLM-based Chat System)</h3>
-        <p>Engineered a low-latency, context-aware chat system leveraging OpenAI API &amp; advanced prompt engineering for high-accuracy, real-time responses.<br><br>Architected scalable REST APIs (Node.js/Express) to manage concurrent queries, conversational memory, and future RAG integrations.</p>
+        <p>Engineered a low-latency, context-aware chat system leveraging OpenAI API &amp;  real-time responses.<br><br>Architected scalable REST APIs (Node.js/Express)</p>
         <div class="proj-stack">
           <span class="spl">React.js</span><span class="spl">Node.js</span>
           <span class="spl">OpenAI API</span><span class="spl">Express.js</span>
@@ -291,13 +295,16 @@
 
     <!-- Trading App -->
     <div class="proj-card big reveal reveal-right tilt-card" id="proj-trading">
+      <div class="timeline-img">
+   <img src="./images/wanderlust.png" alt="">
+</div>
       <div class="proj-thumb screenshot-mode">
         <img src="./images/wanderlust.png" alt="Wanderlust Platform Screenshot" class="proj-screenshot">
         <span class="proj-corner wip">Building</span>
       </div>
       <div class="proj-body" data-num="02">
         <h3>Wanderlust – Travel Platform | MERN Stack</h3>
-        <p>Developed a comprehensive full-stack property marketplace.<br><br>Implemented robust, role-based user authentication and security pipelines utilizing JWT and bcrypt for secure login and data protection.<br><br>Optimized media handling by integrating Cloudinary for fast, dynamic image uploads and optimized database schemas in MongoDB for complex listing queries.</p>
+        <p>Developed a comprehensive full-stack property marketplace.<br><br>I user authentication and security pipelines utilizing JWT and bcrypt for secure login and data protection.</p>
         <div class="proj-stack">
           <span class="spl">React.js</span><span class="spl">Node.js</span>
           <span class="spl">Express.js</span><span class="spl">MongoDB</span>
@@ -312,6 +319,9 @@
 
     <!-- Smart Studio -->
     <div class="proj-card big reveal reveal-left tilt-card" id="proj-smartstudio">
+      <div class="timeline-img">
+   <img src="./images/smart_studio.png" alt="">
+</div>
       <div class="proj-thumb" style="--ta:rgba(124,58,237,0.18);--tb:rgba(13,148,136,0.14);">
         <div class="thumb-bg"></div>
         <span class="proj-corner live">Live</span>
@@ -333,6 +343,9 @@
 
     <!-- Attendance System -->
     <div class="proj-card big reveal reveal-right tilt-card" id="proj-attendance">
+      <div class="timeline-img">
+   <img src="./images/attendance.png" alt="">
+</div>
       <div class="proj-thumb" style="--ta:rgba(244,114,182,0.16);--tb:rgba(155,114,239,0.12);">
         <div class="thumb-bg"></div>
         <span class="proj-corner live">Complete</span>
@@ -356,7 +369,7 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" style="background-color: transparent;">
   <div class="s-tag reveal">Tech Stack</div>
   <h2 class="s-title reveal">Skills &amp; technologies</h2>
   <div class="section-line reveal"></div>
@@ -514,7 +527,7 @@
 
 
 <!-- LEARNING -->
-<section id="learning">
+<section id="learning" style="background-color: transparent;">
   <div class="s-tag reveal">Growth</div>
   <h2 class="s-title reveal">My Learning Path</h2>
   <div class="section-line reveal"></div>
@@ -554,7 +567,7 @@
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
+<section id="education" style="background-color: transparent;">
   <div class="s-tag reveal">Background</div>
   <h2 class="s-title reveal">Education</h2>
   <div class="section-line reveal"></div>
@@ -582,7 +595,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" style="border-radius: 30px;" >
   <div class="contact-inner reveal">
     <div class="contact-avatar-wrap">
       <img src="./furkan.jpg" alt="Md Furkan Alam" class="contact-avatar-img">

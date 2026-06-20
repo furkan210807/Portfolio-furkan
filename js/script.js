@@ -186,20 +186,19 @@
     dot.style.top  = my + 'px';
   });
 
-  // (function animRing() {
-  //   rx += (mx - rx) * 0.13;
-  //   ry += (my - ry) * 0.13;
-  //   ring.style.left = rx + 'px';
-  //   ring.style.top  = ry + 'px';
-  //   requestAnimationFrame(animRing);
-  // })();
+  (function animRing() {
+    rx += (mx - rx) * 0.13;
+    ry += (my - ry) * 0.13;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animRing);
   })();
 
-//   document.querySelectorAll('a,button,.proj-card,.sk-card,.learn-card,.edu-card').forEach(el => {
-//     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-//     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-//   });
-// })();
+  document.querySelectorAll('a,button,.proj-card,.sk-card,.learn-card,.edu-card').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+})();
 
 
 /* ─────────────────────────────────────────────
@@ -536,4 +535,33 @@ resumeBtns.forEach(btn => {
       });
     }
   });
+});
+
+/* ─────────────────────────────────────────────
+   19. THEME TOGGLE
+───────────────────────────────────────────── */
+const themeToggleBtn = document.getElementById('theme-toggle');
+if (themeToggleBtn) {
+  const currentTheme = localStorage.getItem('portfolio-theme-v2') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme-v2', theme);
+  });
+};
+
+
+const btn = document.getElementById("themeBtn");
+
+btn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    btn.textContent = "☀️ Light Mode";
+  } else {
+    btn.textContent = "🌙 Dark Mode";
+  }
 });
